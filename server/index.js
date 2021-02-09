@@ -19,6 +19,15 @@ app.listen(PORT, () => {
 
 
 //// read: (get empty rooms list)
+app.get('/roomies/empties', (req, res) => {
+  roomies.selectAllEmpties((err, list) => {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      res.send(list)
+    }
+  })
+})
 
 
 //// read: (get occupancy list)

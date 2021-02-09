@@ -2,27 +2,19 @@ DROP DATABASE IF EXISTS roomies;
 
 CREATE DATABASE roomies;
 
+USE roomies;
+
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
-  userId INT NOT NULL AUTO_INCREMENT,
+  id INT NOT NULL AUTO_INCREMENT,
+  userId INT NOT NULL,
   firstName VARCHAR(20) NOT NULL,
   lastName VARCHAR(30) NOT NULL,
-  phoneCell VARCHAR(15) NOT NULL,
   phoneHome VARCHAR(15) NOT NULL,
+  phoneCell VARCHAR(15) NOT NULL,
   email VARCHAR(30) NOT NULL,
-  student TINYINT,
-  faculty TINYINT,
-  staff TINYINT,
-  vendor TINYINT,
-  guest TINYINT,
-  board TINYINT,
-  donor TINYINT,
-  instrument VARCHAR(30),
-  attYears TINYINT,
-  PRIMARY KEY (id),
-  INDEX (id),
-  INDEX (lastName)
+  PRIMARY KEY (id)
 );
 
 DROP TABLE IF EXISTS room;
@@ -32,83 +24,48 @@ CREATE TABLE rooms (
   dorm VARCHAR(20) NOT NULL,
   roomNo VARCHAR(20) NOT NULL,
   single TINYINT NOT NULL,
-  -- checked TINYINT NOT NULL,
-  -- lightIssue VARCHAR(100) NOT NULL,
-  -- airIssue VARCHAR(100) NOT NULL,
-  -- windowIssue VARCHAR(100) NOT NULL,
-  -- furnitureIssue VARCHAR(100) NOT NULL,
-  -- smellIssue VARCHAR(100) NOT NULL,
-  -- otherIssue VARCHAR(100) NOT NULL,
   mar21UserId INT,
-  -- mar22UserId INT,
-  -- mar23UserId INT,
-  -- mar24UserId INT,
-  -- mar25UserId INT,
-  -- mar26UserId INT,
-  -- mar27UserId INT,
-  -- swept TINY INT NOT NULL,
-  PRIMARY KEY (id),
-  INDEX (dorm),
-  INDEX (roomNo)
+  PRIMARY KEY (roomId)
 );
 
-DROP TABLE IF EXISTS roomReq;
+DROP TABLE IF EXISTS roomReqs;
 
-CREATE TABLE roomReq (
-  id INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE roomReqs (
+  reqId INT NOT NULL AUTO_INCREMENT,
   userId INT NOT NULL,
   approxAge VARCHAR(20) NOT NULL,
   rrPref VARCHAR(30) NOT NULL,
   emergencyName VARCHAR(50) NOT NULL,
   emergencyPhone VARCHAR(15) NOT NULL,
-  -- checkIn DATE NOT NULL,
-  -- checkOut DATE NOT NULL,
-  -- arrTime TIME NOT NULL,
+  checkIn VARCHAR(50) NOT NULL,
+  checkOut VARCHAR(50) NOT NULL,
+  arrTime VARCHAR(50) NOT NULL,
   roomType VARCHAR(20) NOT NULL,
-  roommateName VARCHAR(30),
-  -- mealCard TINYINT NOT NULL,
-  -- linens TINYINT NOT NULL,
-  -- comment VARCHAR(100),
-  PRIMARY KEY (id),
-  -- INDEX (checkIn),
-  -- INDEX (checkOut),
-  -- INDEX (mealCard),
-  -- INDEX (linens)
+  roommateUserId VARCHAR(30),
+  PRIMARY KEY (reqId)
 );
 
--- DROP TABLE IF EXISTS keys;
 
--- CREATE TABLE keys (
---   id INT NOT NULL AUTO_INCREMENT,
---   roomId INT NOT NULL,
---   keyCode VARCHAR(10) NOT NULL,
---   numKeys TINYINT NOT NULL,
---   PRIMARY KEY (id)
--- );
-
-LOAD DATA LOCAL INFILE 'make some files'
+LOAD DATA LOCAL INFILE './database/users.csv'
 INTO TABLE users
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
-(firstName, lastName, phoneCell, phoneHome, email, student, faculty, staff, vendor, guest, board, donor, instrument, attYears);
+IGNORE 1 ROWS
+(userId, firstName, lastName, phoneHome, phoneCell, email);
 
-LOAD DATA LOCAL INFILE 'another file'
+LOAD DATA LOCAL INFILE './database/rooms.csv'
 INTO TABLE rooms
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
+IGNORE 1 ROWS
 (dorm, roomNo, single, mar21UserId);
 
-LOAD DATA LOCAL INFILE 'yet another file'
-INTO TABLE roomReq
+LOAD DATA LOCAL INFILE './database/roomReq.csv'
+INTO TABLE roomReqs
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
-(userId, approxAge, rrPref, emergencyName, emergencyPhone, roomType, roommateName);
-
--- LOAD DATA LOCAL INFILE 'even another file more'
--- INTO TABLE keys
--- FIELDS TERMINATED BY ','
--- OPTIONALLY ENCLOSED BY '"'
--- (roomId, keyCode, numKeys);
+IGNORE 1 ROWS
+(userId, approxAge, rrPref, emergencyName, emergencyPhone, checkIn, checkOut, arrTime, roomType, roommateUserId);
 
 
 /*  Execute this file from the command line by typing:

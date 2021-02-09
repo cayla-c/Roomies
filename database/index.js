@@ -19,13 +19,14 @@ connection.connect((err) => {
 
 module.exports = {
 
-  selectAll: function(callback) {
-    connection.query('SELECT * FROM users', function(err, results, fields) {
+  /// find all empty rooms for a given night:
+  selectAllEmpties: function(callback) {
+    connection.query('SELECT dorm, roomNo, single FROM rooms WHERE mar21UserId = 0;', function(err, results) {
       if(err) {
         callback(err, null);
       } else {
         callback(null, results);
       }
     });
-  };
+  }
 }

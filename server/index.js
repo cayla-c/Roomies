@@ -24,7 +24,16 @@ app.get('/roomies/empties', (req, res) => {
     if (err) {
       res.sendStatus(500);
     } else {
-      res.send(list)
+      var formattedList = [];
+      list.map((element) => {
+        if (element.single === 0) {
+          element.single = 'single';
+        } else {
+          element.single = 'double';
+        }
+        formattedList.push(element);
+      })
+      res.send(formattedList)
     }
   })
 })

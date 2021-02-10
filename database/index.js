@@ -21,11 +21,11 @@ module.exports = {
 
   /// find all empty rooms for a given night:
   selectAllEmpties: function(callback) {
-    connection.query('SELECT dorm, roomNo, single FROM rooms WHERE mar21UserId = 0;', function(err, results) {
+    connection.query('SELECT dorm, roomNo, single FROM rooms WHERE mar21UserId = 0;', function(err, list) {
       if(err) {
         callback(err, null);
       } else {
-        callback(null, results);
+        callback(null, list);
       }
     });
   }

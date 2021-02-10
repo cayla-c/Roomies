@@ -3,32 +3,41 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Table from 'react-bootstrap/Table';
 
-var EmptyRooms = (props) => {
+var Occupancy = (props) => {
   return (
-    <div className="empty-list">
+    <div className="occupancy-list">
       <Modal show={props.isOpen}
         onHide={props.closeModal}
         backdrop="static"
-        keyboard={false}>
+        keyboard={false}
+        size="lg">
       <Modal.Header>
-        <Modal.Title>Empty Rooms:</Modal.Title>
+        <Modal.Title>Occupancy:</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Table striped bordered hover>
+        <Table striped bordered hover responsive>
           <thead>
             <tr>
               <th>Dorm</th>
-              <th>Room</th>
-              <th>Size</th>
+              <th>Room:</th>
+              <th>First:</th>
+              <th>Last:</th>
+              <th>Cell:</th>
+              <th>Emerg. Contact:</th>
+              <th>Emerg. Phone:</th>
             </tr>
           </thead>
           <tbody>
-            {props.list.map((room) => {
+            {props.list.map((row) => {
               return (
               <tr key={Math.random()}>
-                <td>{room.dorm}</td>
-                <td>{room.roomNo}</td>
-                <td>{room.single}</td>
+                <td>{row.dorm}</td>
+                <td>{row.roomNo}</td>
+                <td>{row.firstName}</td>
+                <td>{row.lastName}</td>
+                <td>{row.phoneCell}</td>
+                <td>{row.emergencyName}</td>
+                <td>{row.emergencyPhone}</td>
               </tr>
             )})}
           </tbody>
@@ -42,4 +51,4 @@ var EmptyRooms = (props) => {
   )
 }
 
-export default EmptyRooms;
+export default Occupancy;

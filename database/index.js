@@ -28,5 +28,19 @@ module.exports = {
         callback(null, list);
       }
     });
+  },
+
+  /// find all filled rooms for a given night:
+  selectAllOccupied: function(callback) {
+    connection.query('SELECT rooms.dorm, rooms.roomNo, users.firstName, users.lastName, users.phoneCell, roomReqs.emergencyName, roomReqs.emergencyPhone FROM rooms LEFT JOIN users ON rooms.mar21UserId=users.userId JOIN roomReqs ON users.userId=roomReqs.userId WHERE rooms.mar21UserId>0;', function(err, list) {
+      if(err) {
+        callback(err, null);
+      } else {
+        callback(null, list);
+      }
+    });
   }
+
+  /// assign someone to a room:
+  // UPDATE rooms SET mar21UserId = ? WHERE roomNo = ?; ---- can you have two '?' going on?
 }

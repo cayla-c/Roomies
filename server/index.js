@@ -40,6 +40,15 @@ app.get('/roomies/empties', (req, res) => {
 
 
 //// read: (get occupancy list)
+app.get('/roomies/occupancy', (req, res) => {
+  roomies.selectAllOccupied((err, list) => {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      res.send(list)
+    }
+  })
+})
 
 
 //// update: (change user from one room to another)

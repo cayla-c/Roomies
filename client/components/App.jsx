@@ -69,7 +69,6 @@ class App extends React.Component {
   assign(userId, roomId) {
     axios.patch(`/roomies/${userId}/${roomId}`)
       .then((success) => {
-        console.log("room successfully assigned!")
         // <AlertAssignedOk show={this.state.assignedAlertShow} dimiss={this.dismissAlert}/>
       })
       .catch((error) => console.log(error))
@@ -85,7 +84,6 @@ class App extends React.Component {
   }
 
   handleAssignClick = (userId) => {
-    console.log(`${userId} was clicked!`)
     this.assign(userId, this.state.currentRoom);
   }
 
@@ -119,13 +117,13 @@ class App extends React.Component {
             size="lg"
             onClick={() => this.getOccReport()}>Generate Occupancy Report</Button>{' '}
           <Button
-          variant="warning"
-          size="lg"
-          >See Floorplan</Button>{' '}
+            variant="warning"
+            size="lg"
+            >See Floorplan</Button>{' '}
           <Button
-          variant="danger"
-          size="lg"
-          onClick={() => this.showModalUnassigned()}>Who's Unassigned?</Button>{' '}
+            variant="danger"
+            size="lg"
+            onClick={() => this.showModalUnassigned()}>Who's Unassigned?</Button>
         </div>
         <div className="empty-list">
           <ModalEmptyRooms
@@ -164,8 +162,8 @@ class App extends React.Component {
             />
         </div>
       </div>
-    )
-  }
+      )
+    }
 }
 
 export default App;

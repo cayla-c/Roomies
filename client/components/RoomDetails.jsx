@@ -3,7 +3,6 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 var RoomDetails = (props) => {
-  console.log('what props were sent to RoomDeatils? ', props)
   return ( props.room === null ? (<div></div>) : (
     <div>
       <Card style={{ width: '18rem' }}>

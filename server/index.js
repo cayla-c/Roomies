@@ -78,7 +78,6 @@ app.get('/unassigned', (req, res) => {
 
 //// update: (change user from one room to another)
 app.patch('/roomies/:userId/:roomId', (req, res) => {
-  console.log('what came to the server? ', req.params)
   roomies.assignRoom(req.params, (err, success) => {
     if (err) {
       res.sendStatus(500);

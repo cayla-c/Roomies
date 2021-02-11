@@ -20,7 +20,8 @@
     "react": "^16.14.0",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^16.14.0",
-    "react-modal": "^3.12.1"
+    "react-modal": "^3.12.1",
+    "react-pdf": "^5.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.13",

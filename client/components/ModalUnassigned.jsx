@@ -3,16 +3,16 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Table from 'react-bootstrap/Table';
 
-var ModalAssign = (props) => {
+var ModalUnassigned = (props) => {
   return(
     <div className="modal-assign">
-      <Modal show={props.isOpenModalAssign}
-        onHide={props.closeModalAssign}
+      <Modal show={props.isOpenModalUnassigned}
+        onHide={props.closeModalUnassigned}
         backdrop="static"
         keyboard={false}
         size="lg">
       <Modal.Header>
-        <Modal.Title>Assigning:</Modal.Title>
+        <Modal.Title>Who's left...</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Table striped bordered hover responsive>
@@ -30,7 +30,7 @@ var ModalAssign = (props) => {
           <tbody>
             {props.list.map((row) => {
               return (
-              <tr key={Math.random()} onClick={() => {props.handleAssignClick(row.userId)}}>
+              <tr key={Math.random()} >
                 <td>{row.userId}</td>
                 <td>{row.firstName}</td>
                 <td>{row.lastName}</td>
@@ -44,11 +44,11 @@ var ModalAssign = (props) => {
         </Table>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={props.closeModalAssign}>Close</Button>
+        <Button variant="secondary" onClick={props.closeModalUnassigned}>Close</Button>
       </Modal.Footer>
     </Modal>
     </div>
   )
 }
 
-export default ModalAssign;
+export default ModalUnassigned;

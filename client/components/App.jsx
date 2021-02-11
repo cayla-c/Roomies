@@ -6,6 +6,7 @@ import ModalEmptyRooms from './ModalEmptyRooms.jsx';
 import ModalOccupancy from './ModalOccupancy.jsx';
 import RoomDetails from './RoomDetails.jsx';
 import ModalAssign from './ModalAssign.jsx';
+import ModalUnassigned from './ModalUnassigned.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class App extends React.Component {
       isOpenEmpty: false,
       isOpenOcc: false,
       isOpenModalAssign: false,
+      isOpenModalUnassigned: false,
       occupantList: [],
       currentDorm: '',
       currentRoom: '',
@@ -76,6 +78,7 @@ class App extends React.Component {
   // CLOSE ALL THE MODALS
   closeModalEmpty = () => this.setState({ isOpenEmpty: false });
   closeModalAssign = () => this.setState({ isOpenModalAssign: false });
+  closeModalUnassigned = () => this.setState({ isOpenModalUnassigned: false });
   handleRoomClick = (room) => {
     this.setState({ isOpenEmpty: false, currentRoom: room });
     this.getRoomDetails(parseInt(room));
@@ -90,6 +93,11 @@ class App extends React.Component {
 
   showModalAssign = () => {
     this.setState({ isOpenModalAssign: true });
+    this.getUnassignedUsers();
+  }
+
+  showModalUnassigned = () => {
+    this.setState({ isOpenModalUnassigned: true });
     this.getUnassignedUsers();
   }
 
@@ -114,6 +122,10 @@ class App extends React.Component {
           variant="warning"
           size="lg"
           >See Floorplan</Button>{' '}
+          <Button
+          variant="danger"
+          size="lg"
+          onClick={() => this.showModalUnassigned()}>Who's Unassigned?</Button>{' '}
         </div>
         <div className="empty-list">
           <ModalEmptyRooms
@@ -142,6 +154,13 @@ class App extends React.Component {
             isOpenModalAssign={this.state.isOpenModalAssign}
             closeModalAssign={this.closeModalAssign.bind(this)}
             handleAssignClick={this.handleAssignClick.bind(this)}
+            />
+        </div>
+        <div className="occupancy-list">
+          <ModalUnassigned
+            list={this.state.unassignedUsers}
+            isOpenModalUnassigned={this.state.isOpenModalUnassigned}
+            closeModalUnassigned={this.closeModalUnassigned.bind(this)}
             />
         </div>
       </div>

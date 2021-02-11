@@ -31,7 +31,7 @@ module.exports = {
   },
 
   /// get list of unassigned users:
-  selectUnassigned: function(callback) {
+  selectUnassignedUsers: function(callback) {
     connection.query('SELECT users.userId, users.firstName, users.lastName, roomReqs.approxAge, roomReqs.rrPref, roomReqs.roomType, roomReqs.roommateUserId FROM users LEFT JOIN roomReqs ON users.userId=roomReqs.userId WHERE NOT EXISTS (SELECT * FROM rooms WHERE users.userId=rooms.mar21UserId);', function(err, list) {
       if (err) {
         callback(err, null);
@@ -65,8 +65,8 @@ module.exports = {
 
   /// assign someone to a room:
   assignRoom: function(params, callback) {
-    console.log('params received ', params)
-    connection.query(`UPDATE rooms SET mar21UserId = ${params.userId} WHERE roomId = ${params.roomId};`, function(err, success) {
+    console.log('what got to the database index? ', params)
+    connection.query(`UPDATE rooms SET mar21UserId = ${params.userId} WHERE roomNo = ${params.roomId};`, function(err, success) {
       if(err) {
         callback(err, null);
       } else {

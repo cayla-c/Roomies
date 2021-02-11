@@ -64,20 +64,26 @@ class App extends React.Component {
 
   // ASSIGN A ROOM
   // dismissAlert = () => this.setState({ assignedAlertShow: false })
-  // assign(userId, roomId) {
-  //   axios.patch(`/roomies/${userId}/${roomId}`)
-  //     .then((success) => {
-  //       <AlertAssignedOk show={this.state.assignedAlertShow} dimiss={this.dismissAlert}/>
-  //     })
-  //     .catch((error) => console.log(error))
-  //   };
+  assign(userId, roomId) {
+    axios.patch(`/roomies/${userId}/${roomId}`)
+      .then((success) => {
+        console.log("room successfully assigned!")
+        // <AlertAssignedOk show={this.state.assignedAlertShow} dimiss={this.dismissAlert}/>
+      })
+      .catch((error) => console.log(error))
+    };
 
   // CLOSE ALL THE MODALS
   closeModalEmpty = () => this.setState({ isOpenEmpty: false });
   closeModalAssign = () => this.setState({ isOpenModalAssign: false });
   handleRoomClick = (room) => {
-    this.setState({ isOpenEmpty: false });
+    this.setState({ isOpenEmpty: false, currentRoom: room });
     this.getRoomDetails(parseInt(room));
+  }
+
+  handleAssignClick = (userId) => {
+    console.log(`${userId} was clicked!`)
+    this.assign(userId, this.state.currentRoom);
   }
 
   closeModalOcc = () => this.setState({ isOpenOcc: false });
@@ -104,10 +110,10 @@ class App extends React.Component {
             variant="success"
             size="lg"
             onClick={() => this.getOccReport()}>Generate Occupancy Report</Button>{' '}
-          {/* <Button
+          <Button
           variant="warning"
           size="lg"
-          onClick={() => this.getOccReport()}>Generate Occupancy Report</Button>{' '} */}
+          >See Floorplan</Button>{' '}
         </div>
         <div className="empty-list">
           <ModalEmptyRooms
@@ -135,6 +141,7 @@ class App extends React.Component {
             list={this.state.unassignedUsers}
             isOpenModalAssign={this.state.isOpenModalAssign}
             closeModalAssign={this.closeModalAssign.bind(this)}
+            handleAssignClick={this.handleAssignClick.bind(this)}
             />
         </div>
       </div>

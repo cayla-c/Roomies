@@ -31,7 +31,7 @@ var ModalAssign = (props) => {
           <tbody>
             {props.list.map((row) => {
               return (
-              <tr key={Math.random()}>
+              <tr key={Math.random()} onClick={() => {props.handleAssignClick(row.userId)}}>
                 <td>{row.userId}</td>
                 <td>{row.firstName}</td>
                 <td>{row.lastName}</td>

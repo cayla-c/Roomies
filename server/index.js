@@ -67,7 +67,7 @@ app.get('/roomies/:id', (req, res) => {
 
 //// read: (unassigned users list)
 app.get('/unassigned', (req, res) => {
-  roomies.selectUnassigned((err, list) => {
+  roomies.selectUnassignedUsers((err, list) => {
     if (err) {
       res.sendStatus(500);
     } else {
@@ -78,10 +78,12 @@ app.get('/unassigned', (req, res) => {
 
 //// update: (change user from one room to another)
 app.patch('/roomies/:userId/:roomId', (req, res) => {
+  console.log('what came to the server? ', req.params)
   roomies.assignRoom(req.params, (err, success) => {
     if (err) {
       res.sendStatus(500);
     } else {
+      console.log('that worked!')
       res.sendStatus(200);
     }
   })

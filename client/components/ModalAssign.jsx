@@ -3,53 +3,53 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Table from 'react-bootstrap/Table';
 
-var Occupancy = (props) => {
-  return (
-    <div className="occupancy-list">
-      <Modal show={props.isOpenOcc}
-        onHide={props.closeModalOcc}
+var ModalAssign = (props) => {
+  console.log(props)
+  return(
+    <div className="modal-assign">
+      <Modal show={props.isOpenModalAssign}
+        onHide={props.closeModalAssign}
         backdrop="static"
         keyboard={false}
         size="lg">
       <Modal.Header>
-        <Modal.Title>Occupancy:</Modal.Title>
+        <Modal.Title>Assigning:</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Table striped bordered hover responsive>
           <thead>
             <tr>
-              <th>Dorm</th>
-              <th>Room:</th>
+              <th>User Id:</th>
               <th>First:</th>
               <th>Last:</th>
-              <th>Cell:</th>
-              <th>Emerg. Contact:</th>
-              <th>Emerg. Phone:</th>
+              <th>Room Type:</th>
+              <th>Rooming with:</th>
+              <th>Approx Age:</th>
+              <th>Restroom Pref:</th>
             </tr>
           </thead>
           <tbody>
             {props.list.map((row) => {
               return (
               <tr key={Math.random()}>
-                <td>{row.dorm}</td>
-                <td>{row.roomNo}</td>
+                <td>{row.userId}</td>
                 <td>{row.firstName}</td>
                 <td>{row.lastName}</td>
-                <td>{row.phoneCell}</td>
-                <td>{row.emergencyName}</td>
-                <td>{row.emergencyPhone}</td>
+                <td>{row.roomType}</td>
+                <td>{row.roommateUserId}</td>
+                <td>{row.approxAge}</td>
+                <td>{row.rrPref}</td>
               </tr>
             )})}
           </tbody>
         </Table>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={props.closeModalOcc}>Close</Button>
-        <Button variant="secondary" onClick={props.closeModalOcc}>Send Report</Button>
+        <Button variant="secondary" onClick={props.closeModalAssign}>Cancel</Button>
       </Modal.Footer>
     </Modal>
     </div>
   )
 }
 
-export default Occupancy;
+export default ModalAssign;

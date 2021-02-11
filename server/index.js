@@ -38,7 +38,6 @@ app.get('/roomies/empties', (req, res) => {
   })
 })
 
-
 //// read: (get occupancy list)
 app.get('/roomies/occupancy', (req, res) => {
   roomies.selectAllOccupied((err, list) => {
@@ -50,8 +49,42 @@ app.get('/roomies/occupancy', (req, res) => {
   })
 })
 
+//// read: (single room details)
+app.get('/roomies/:id', (req, res) => {
+  roomies.selectOneRoom(req.params.id, (err, details) => {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      if (details[0].single === 0) {
+        details[0].single = 'single';
+      } else {
+        details[0].single = 'double';
+      }
+      res.send(details);
+    }
+  })
+}),
+
+//// read: (unassigned users list)
+app.get('/unassigned', (req, res) => {
+  roomies.selectUnassigned((err, list) => {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      res.send(list)
+    }
+  })
+})
 
 //// update: (change user from one room to another)
-
+app.patch('/roomies/:userId/:roomId', (req, res) => {
+  roomies.assignRoom(req.params, (err, success) => {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      res.sendStatus(200);
+    }
+  })
+})
 
 //// delete: (someone took their toys and went home)

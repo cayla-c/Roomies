@@ -11,7 +11,7 @@ var EmptyRooms = (props) => {
         backdrop="static"
         keyboard={false}>
       <Modal.Header>
-        <Modal.Title>Empty Rooms:</Modal.Title>
+        <Modal.Title>Empty Rooms - click to see details</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Table striped bordered hover>
@@ -25,7 +25,7 @@ var EmptyRooms = (props) => {
           <tbody>
             {props.list.map((room) => {
               return (
-              <tr key={Math.random()}>
+              <tr key={Math.random()} onClick={() => {props.handleRoomClick(room.roomNo)}}>
                 <td>{room.dorm}</td>
                 <td>{room.roomNo}</td>
                 <td>{room.single}</td>

@@ -12,3 +12,25 @@ There is a landing page with buttons taking you to different generic tasks (“G
   - Select a typical answer (“AC is out”) or enter a custom comment (“furniture MIA”) for room maintenance,
   - Assign a participant to put in that room from a dropdown.
   - Already assigned participants might be greyed out, or italicized - you CAN select them, if they are requesting a change, and they will be MOVED to that room, and their previous room becomes available.
+
+
+## Technology
+
+MySql
+Node Express
+React with React Bootstrap
+
+## Installation
+
+Set this up in CLI:
+```bash
+npm run server
+npm run watch
+```
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## Author
+
+Cayla Cardiff

@@ -2,6 +2,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import axios from 'axios';
+import Navigation from './Navigation.jsx';
 import ModalEmptyRooms from './ModalEmptyRooms.jsx';
 import ModalOccupancy from './ModalOccupancy.jsx';
 import RoomDetails from './RoomDetails.jsx';
@@ -102,11 +103,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <nav className="navbar navbar-dark bg-dark">
-          <div className="container">
-            <h1 style={{color:"white"}}>hey Roomies!</h1>
-          </div>
-        </nav>
+        <Navigation />
         <div>
           <Button
             variant="primary"

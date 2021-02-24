@@ -8,6 +8,7 @@ import ModalOccupancy from './ModalOccupancy.jsx';
 import RoomDetails from './RoomDetails.jsx';
 import ModalAssign from './ModalAssign.jsx';
 import ModalUnassigned from './ModalUnassigned.jsx';
+import Floorplan from './Floorplan.jsx';;
 
 class App extends React.Component {
   constructor(props) {
@@ -18,6 +19,7 @@ class App extends React.Component {
       isOpenOcc: false,
       isOpenModalAssign: false,
       isOpenModalUnassigned: false,
+      isVisibleFloorplan: false,
       occupantList: [],
       currentDorm: '',
       currentRoom: '',
@@ -95,6 +97,10 @@ class App extends React.Component {
     this.getUnassignedUsers();
   }
 
+  showFloorplan = () => {
+    this.setState({ isVisibleFloorplan: true });
+  }
+
   showModalUnassigned = () => {
     this.setState({ isOpenModalUnassigned: true });
     this.getUnassignedUsers();
@@ -116,6 +122,7 @@ class App extends React.Component {
           <Button
             variant="warning"
             size="lg"
+            onClick={() => this.showFloorplan()}
             >See Floorplan</Button>{' '}
           <Button
             variant="danger"
@@ -141,6 +148,12 @@ class App extends React.Component {
           <RoomDetails
             room={this.state.currentRoomDetails !== undefined ? this.state.currentRoomDetails : null}
             showModalAssign={this.showModalAssign.bind(this)}
+            />
+        </div>
+        <div className="floorplan">
+          <Floorplan
+            show={this.state.isVisibleFloorplan}
+            showFloorplan={this.showFloorplan.bind(this)}
             />
         </div>
         <div className="occupancy-list">

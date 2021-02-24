@@ -13,12 +13,11 @@ var Navigation = () => {
       variant="dark"
       sticky="top">
       <Navbar.Brand href="http://www.amherstearlymusic.org">
-        <img
+        {/* <img
           alt=""
           src="/logo.svg"
           width="30"
-          height="30"
-        />{' '}
+          height="30" /> */}
         hey, Roomie!
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />

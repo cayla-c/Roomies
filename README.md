@@ -2,23 +2,31 @@
 
 An app to help you assess, maintain, and assign dorm rooms.  This can help your team:
 
-- Check each room for maintenance issues and assessing for size (can 2 people fit in here?),
-- Report any issues with the room,
+<!-- - Check each room for maintenance issues and assessing for size (can 2 people fit in here?), -->
+<!-- - Report any maintenance issues with the room, -->
+<!-- - Record key codes for each room, -->
+- Assign participants to a room(s) for the duration of their stay,
+<!-- - Print a list of rooms needing linens by day, -->
+<!-- - Print a list of rooms needing furniture changes (beds raised/lowered, items borrowed from another room and when/where to return them), -->
+<!-- - Record what key code they have been given, and how they have paid their key deposit (if applicable), -->
+<!-- - Record any internal information about their stay (locks self out every night, left a mess, etc.), -->
 - List which rooms are unassigned each night, so that last minute arrivals can be managed,
+- List which participants remain unassigned, and show their room preferences and your own notes about them,
+<!-- - Display a calendar of arrivals/departures, -->
 - Submit nightly occupancy reports via email.
 
-There is a landing page with buttons taking you to different generic tasks (“Generate occupancy report”, “Find empty rooms”, etc).
-“View floors” takes you to a certain dorm and floorplan, with clickable rooms.  Each room has the option of reporting maintenance, showing size, and who is supposed to be in it each night of the festival.   A user can:
-  - Select a typical answer (“AC is out”) or enter a custom comment (“furniture MIA”) for room maintenance,
-  - Assign a participant to put in that room from a dropdown.
-  - Already assigned participants might be greyed out, or italicized - you CAN select them, if they are requesting a change, and they will be MOVED to that room, and their previous room becomes available.
+## You will need:
 
+- Floorplans for each floor you plan to use, in .pdf and sent to the app owner two weeks before event move-in,
+- Files of user information, in .csv, sent to the app owner one week before event move-in,
+- Web-enabled devices,
+- A login verified with the app owner.
 
 ## Technology
 
 MySql
 Node Express
-React with React Bootstrap
+React Bootstrap
 
 ## Installation
 

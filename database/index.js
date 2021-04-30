@@ -65,6 +65,7 @@ module.exports = {
 
   /// assign someone to a room:
   assignRoom: function(params, callback) {
+    console.log('params to DB assignRoom', params)
     connection.query(`UPDATE rooms SET mar21UserId = ${params.userId} WHERE roomNo = ${params.roomId};`, function(err, success) {
       if(err) {
         callback(err, null);

@@ -24,8 +24,6 @@ class App extends React.Component {
       isOpenModalUnassigned: false,
       isVisibleFloorplan: false,
       occupantList: [],
-      currentDorm: '',
-      currentRoom: '',
       currentRoomDetails: undefined,
       confirmAssignmentShow: false,
       unassignedUsers: []
@@ -73,6 +71,7 @@ class App extends React.Component {
   // ASSIGN A ROOM
   // dismissAlert = () => this.setState({ assignedAlertShow: false })
   assign(userId, roomId) {
+    // console.log('what is getting sent to assign in App:', userId, roomId)
     axios.patch(`/roomies/${userId}/${roomId}`)
       .then((success) => {
         this.setState({ assignedAlertShow: true });
@@ -92,7 +91,7 @@ class App extends React.Component {
 
   // ASSIGN A ROOM
   handleAssignClick = (userId, firstName, lastName) => {
-    this.assign(userId, this.state.currentRoom);
+    this.assign(userId, this.state.currentRoomDetails);
     this.closeModalAssign();
     this.setState({ currentAssigneeFirst:firstName });
     this.setState({ currentAssigneeLast:lastName });
@@ -116,6 +115,7 @@ class App extends React.Component {
   }
 
   render () {
+    console.log(this.state.currentRoomDetails)
     return (
       <div>
         <Navigation />
@@ -165,8 +165,7 @@ class App extends React.Component {
             closeme={this.closeConfirmAssignment}
             personFirst={this.state.currentAssigneeFirst}
             personLast={this.state.currentAssigneeLast}
-            dorm={this.state.currentDorm}
-            room={this.state.currentRoom}/>
+            room={this.state.currentRoomDetails}/>
         </div>
         <div className="floorplan">
           <Floorplan

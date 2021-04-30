@@ -8,7 +8,8 @@ import ModalOccupancy from './ModalOccupancy.jsx';
 import RoomDetails from './RoomDetails.jsx';
 import ModalAssign from './ModalAssign.jsx';
 import ModalUnassigned from './ModalUnassigned.jsx';
-import Floorplan from './Floorplan.jsx';;
+import Floorplan from './Floorplan.jsx';
+import ConfirmAssignment from './ConfirmAssignment.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -18,13 +19,15 @@ class App extends React.Component {
       isOpenEmpty: false,
       isOpenOcc: false,
       isOpenModalAssign: false,
+      currentAssigneeFirst: '',
+      currentAssigneeLast: '',
       isOpenModalUnassigned: false,
       isVisibleFloorplan: false,
       occupantList: [],
       currentDorm: '',
       currentRoom: '',
       currentRoomDetails: undefined,
-      assignedAlertShow: false,
+      confirmAssignmentShow: false,
       unassignedUsers: []
     };
   };
@@ -72,7 +75,7 @@ class App extends React.Component {
   assign(userId, roomId) {
     axios.patch(`/roomies/${userId}/${roomId}`)
       .then((success) => {
-        // <AlertAssignedOk show={this.state.assignedAlertShow} dimiss={this.dismissAlert}/>
+        this.setState({ assignedAlertShow: true });
       })
       .catch((error) => console.log(error))
     };
@@ -80,14 +83,20 @@ class App extends React.Component {
   // CLOSE ALL THE MODALS
   closeModalEmpty = () => this.setState({ isOpenEmpty: false });
   closeModalAssign = () => this.setState({ isOpenModalAssign: false });
+  closeConfirmAssignment = () => this.setState({ confirmAssignmentShow: false });
   closeModalUnassigned = () => this.setState({ isOpenModalUnassigned: false });
   handleRoomClick = (room) => {
     this.setState({ isOpenEmpty: false, currentRoom: room });
     this.getRoomDetails(parseInt(room));
   }
 
-  handleAssignClick = (userId) => {
+  // ASSIGN A ROOM
+  handleAssignClick = (userId, firstName, lastName) => {
     this.assign(userId, this.state.currentRoom);
+    this.closeModalAssign();
+    this.setState({ currentAssigneeFirst:firstName });
+    this.setState({ currentAssigneeLast:lastName });
+    this.setState({ confirmAssignmentShow:true })
   }
 
   closeModalOcc = () => this.setState({ isOpenOcc: false });
@@ -150,10 +159,20 @@ class App extends React.Component {
             showModalAssign={this.showModalAssign.bind(this)}
             />
         </div>
+        <div className="assignAlert">
+          <ConfirmAssignment
+            show={this.state.confirmAssignmentShow}
+            closeme={this.closeConfirmAssignment}
+            personFirst={this.state.currentAssigneeFirst}
+            personLast={this.state.currentAssigneeLast}
+            dorm={this.state.currentDorm}
+            room={this.state.currentRoom}/>
+        </div>
         <div className="floorplan">
           <Floorplan
             show={this.state.isVisibleFloorplan}
             showFloorplan={this.showFloorplan.bind(this)}
+            getRoomDetails={this.getRoomDetails.bind(this)}
             />
         </div>
         <div className="occupancy-list">

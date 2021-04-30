@@ -55,6 +55,7 @@ app.get('/roomies/:id', (req, res) => {
     if (err) {
       res.sendStatus(500);
     } else {
+      console.log(details);
       if (details[0].single === 0) {
         details[0].single = 'single';
       } else {

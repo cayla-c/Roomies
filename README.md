@@ -1,5 +1,7 @@
 # Roomies
 
+![](heyRoomie1.gif)
+
 An app to help you assess, maintain, and assign dorm rooms.  This can help your team:
 
 <!-- - Check each room for maintenance issues and assessing for size (can 2 people fit in here?), -->

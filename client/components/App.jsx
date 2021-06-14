@@ -71,7 +71,6 @@ class App extends React.Component {
   // ASSIGN A ROOM
   // dismissAlert = () => this.setState({ assignedAlertShow: false })
   assign(userId, roomId) {
-    // console.log('what is getting sent to assign in App:', userId, roomId)
     axios.patch(`/roomies/${userId}/${roomId}`)
       .then((success) => {
         this.setState({ assignedAlertShow: true });
@@ -91,7 +90,7 @@ class App extends React.Component {
 
   // ASSIGN A ROOM
   handleAssignClick = (userId, firstName, lastName) => {
-    this.assign(userId, this.state.currentRoomDetails);
+    this.assign(userId, this.state.currentRoomDetails[0].roomNo);
     this.closeModalAssign();
     this.setState({ currentAssigneeFirst:firstName });
     this.setState({ currentAssigneeLast:lastName });
@@ -115,7 +114,6 @@ class App extends React.Component {
   }
 
   render () {
-    console.log(this.state.currentRoomDetails)
     return (
       <div>
         <Navigation />

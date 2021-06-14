@@ -1,4 +1,6 @@
-# Roomies
+# hey, Roomie!
+
+![](heyRoomie1.gif)
 
 An app to help you assess, maintain, and assign dorm rooms.  This can help your team:
 

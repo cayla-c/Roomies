@@ -34,9 +34,11 @@ React Bootstrap
 
 Set this up in CLI:
 ```bash
-npm run server
+npm run start
 npm run watch
 ```
+
+(See Schema.sql file (bottom) to get database set up correctly.)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

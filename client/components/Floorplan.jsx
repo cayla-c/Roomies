@@ -2,10 +2,12 @@ import React from 'react';
 import KB2 from './KBSecond.svg';
 
 var Floorplan = (props) => {
+  // console.log("props to Floorplan?", props)
   if (props.show === true) {
     var roomClick = event => {
       event.preventDefault();
-      console.log(`${event.target.getAttribute("title")} was clicked!`)
+      var roomNo = event.target.getAttribute("title").slice(2);
+      props.getRoomDetails(roomNo);
     }
     return (
       <div className="floorplan" >

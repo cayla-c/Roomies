@@ -55,6 +55,7 @@ app.get('/roomies/:id', (req, res) => {
     if (err) {
       res.sendStatus(500);
     } else {
+      // console.log('server index: single room details', details);
       if (details[0].single === 0) {
         details[0].single = 'single';
       } else {
@@ -78,6 +79,7 @@ app.get('/unassigned', (req, res) => {
 
 //// update: (change user from one room to another)
 app.patch('/roomies/:userId/:roomId', (req, res) => {
+  console.log('what the server is sending on assignment',req.params.roomId)
   roomies.assignRoom(req.params, (err, success) => {
     if (err) {
       res.sendStatus(500);

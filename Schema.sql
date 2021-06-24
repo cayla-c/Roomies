@@ -103,6 +103,7 @@ IGNORE 1 ROWS
  *    mysql --local_infile=1 -u root -p < Schema.sql
  *  to create the database and the tables.
  (visit here if problems: https://stackoverflow.com/questions/59993844/error-loading-local-data-is-disabled-this-must-be-enabled-on-both-the-client)
+ (or here: https://stackoverflow.com/questions/10762239/mysql-enable-load-data-local-infile)
  *
  *  Re-execute this file from inside the MySQl shell by typing:
  *  source Schema.sql;

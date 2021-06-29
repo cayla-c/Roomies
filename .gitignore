@@ -23,4 +23,6 @@ public/app.js
 
 *.cer
 *.pem
+*.env
+
 

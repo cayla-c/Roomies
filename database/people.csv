@@ -1,0 +1,51 @@
+userId,prefix,firstName,middleName,lastName,suffix,nickName,phoneCell,phoneHome,email,addressLine1,addressLine2,addressCity,addressState,addressZip,addressCountry,areaOfStudy1,areaOfStudy2,areaOfStudy3,areaOfStudy4,areaOfStudy5,program1,program2,program3,program4,role1,role2,role3,role4,role5,vendorCo,guestOf,yearsAttended,arrivalDate,departureDate,housingRequested,mealCardRequested
+1,Mr.,Robert,Allen,Hanley,IV,Bob,1234567890,9876543210,robert@mail.com,123 Ave A,Apt 3,Concord,MA,12345,US,Historical Dance,Voice,Reeds/Brass,BowedStrings,Notation/Theory,NLA,,,,Staff,Faculty,,,,,,1,7,14,y,y
+2,Ms.,Patricia,,Morris,,,1234567890,9876543210,patricia@mail.com,PO Box 345,,New York,NY,12345,US,Historical Dance,Keyboards,,,,NLA,,,,Student,,,,,,,2,7,14,y,y
+3,Mrs.,Pearl,,Becker,,,1234567890,9876543210,pearl@mail.com,PO Box 345,,Concord,MA,12345,US,Recorder/Flute,Voice,,,,barAcc,General,,,Faculty,,,,,,,3,7,14,y,y
+4,Mr.,Jerry,,Doctor,,,1234567890,9876543210,jerry@mail.com,123 Ave A,,Concord,MA,12345,US,Recorder/Flute,Voice,BowedStrings,,,General,,,,Student,Workstudy,,,,,,4,7,14,y,y
+5,Ms.,Elizabeth,,Joe,,,1234567890,9876543210,elizabeth@mail.com,123 Ave A,,Concord,MA,12345,US,Keyboards,Recorder/Flute,,,,barAcc,,,,Student,,,,,,,5,7,14,y,y
+6,Mr.,Ronald,Schmonald,Freedman,,,1234567890,9876543210,ronald@mail.com,123 Ave A,,Concord,MA,12345,US,Recorder/Flute,,,,,General,,,,Student,,,,,,,6,7,14,y,y
+7,,Heather,,Green,,,1234567890,9876543210,heather@mail.com,123 Ave A,,Concord,MA,12345,US,Bowed Strings,Recorder/Flute,,,,barAcc,,,,Student,,,,,,,7,7,14,y,y
+8,Mrs.,Sharon,,Palmer,,,1234567890,9876543210,sharon@mail.com,123 Ave A,Apt 3,Concord,MA,12345,US,Reeds/Brass,,,,,barAcc,,,,Student,,,,,,,8,7,14,y,y
+9,Mr.,Frank,,Erenburg,,,1234567890,9876543210,frank@mail.com,123 Ave A,Apt 3,Concord,MA,12345,US,Historical Dance,,,,,NLA,,,,Student,,,,,,,9,7,14,n,y
+10,Mr.,Robert,,Stern,Jr.,,1234567890,9876543210,robert@mail.com,123 Ave A,,Concord,MA,12345,US,Lutes/Guitars/Harps,,,,,General,,,,Faculty,,,,,,,10,7,21,n,y
+11,,Ellie,Anne,Smith,,,1234567890,9876543210,ellie@mail.com,PO Box 345,,New York,NY,12345,US,Reeds/Brass,Voice,Keyboards,Percussion,,General,,,,Faculty,,,,,,,11,7,21,n,n
+12,Mrs.,Anne,,Hansen,,,1234567890,9876543210,anne@mail.com,PO Box 345,,New York,NY,12345,US,Bowed Strings,Percussion,,,,General,,,,Student,Workstudy,,,,,,12,7,21,n,n
+13,Ms.,Carolyn,,Smith,,,1234567890,9876543210,carolyn@mail.com,PO Box 345,,New York,NY,12345,US,Recorder/Flute,Voice,Reeds/Brass,,,barAcc,General,,,Student,,,,,,,13,7,21,y,y
+14,Ms.,Anne,Ellie,Lincold,,,1234567890,9876543210,anneL@mail.com,PO Box 345,,New York,NY,12345,US,n/a,,,,,General,,,,Staff,,,,,,,14,7,21,y,y
+15,,Louise,,Lopez,,Lou,1234567890,9876543210,louise@mail.com,PO Box 345,,New York,NY,12345,US,Lutes/Guitars/Harps,BowedStrings,,,,General,,,,Student,,,,,,,15,7,21,y,y
+16,Mrs.,Peg,,Adler,,,1234567890,9876543210,peg@mail.com,PO Box 345,,New York,NY,12345,US,Historical Dance,,,,,Opera,General,,,Student,,,,,,,16,7,21,y,y
+17,Ms.,Lindsay,,Jiminez,,,1234567890,9876543210,lindsay@mail.com,PO Box 345,,New York,NY,12345,US,Voice,Recorder/Flute,,,,barAcc,,,,Student,,,,,,,2,7,21,y,y
+18,Ms.,Patricia,,McGrath,,Pat,1234567890,9876543210,patriciaM@mail.com,123 Ave A,,Honolulu,HI,12345,US,Recorder/Flute,,,,,General,,,,Student,Staff,,,,,,4,7,21,y,y
+19,,Mireille,,Rupp,,,1234567890,9876543210,mireille@mail.com,123 Ave A,Apt 3,Copenhagen,beatsMe,348796,Denmark,Bowed Strings,Voice,,,,General,,,,Student,Workstudy,,,,,,3,7,21,y,y
+20,,Patricia Lee,Margaret,Seinfeld,,,1234567890,9876543210,patriciaS@mail.com,123 Ave A,Apt 3,Oberlin,OH,12345,US,Historical Dance,,,,,NLA,,,,Student,,,,,,,5,7,21,y,y
+21,Mr.,David,,Lawrence,,,1234567890,9876543210,david@mail.com,123 Ave A,,Concord,MA,12345,US,Reeds/Brass,Keyboards,,,,barAcc,,,,Student,,,,,,,1,7,21,y,y
+22,Mr.,Ronald,,Horst,,,1234567890,9876543210,ronaldH@mail.com,123 Ave A,,Concord,MA,12345,US,Percussion,BowedStrings,,,,General,,,,Student,,,,,,,6,14,21,y,y
+23,,Harriet,,Johnson,,,1234567890,9876543210,harriet@mail.com,123 Ave A,,Concord,MA,12345,US,Recorder/Flute,Reeds/Brass,,,,barAcc,,,,Student,,,,,,,7,14,21,y,y
+24,Mrs.,Lee,,Korisheli,,,1234567890,9876543210,lee@mail.com,123 Ave A,,Concord,MA,12345,US,Keyboards,Voice,,,,barAcc,,,,Staff,Student,,,,,,8,14,21,y,y
+25,Mrs.,Arlene,,Eagan,,Ari,1234567890,9876543210,arlene@mail.com,123 Ave A,,Concord,MA,12345,US,Recorder/Flute,Voice,,,,General,ESI,,,Student,,,,,,,1,14,21,y,y
+26,Mrs.,Carolyn,,Bearden,,,1234567890,9876543210,carolynB@mail.com,PO Box 345,,Concord,MA,12345,US,Recorder/Flute,Voice,,,,General,,,,Student,Staff,,,,,,2,14,21,y,y
+27,Mr.,David,,Samuel,Sr.,,1234567890,9876543210,davidS@mail.com,PO Box 345,,Concord,MA,12345,US,Lutes/Guitars/Harps,,,,,General,ESI,,,Student,,,,,,,1,14,21,y,y
+28,,Carolyn,Sue,Robert,,,1234567890,9876543210,carolynR@mail.com,PO Box 345,,London,England,33-65-211,UK,Recorder/Flute,Keyboards,,,,General,,,,Student,,,,,,,42,14,21,y,y
+29,,Ebin,,Tilove,,,1234567890,9876543210,ebin@mail.com,PO Box 345,,New York,NY,12345,US,Notation,Percussion,,,,General,,,,Student,,,,,,,5,14,21,y,y
+30,Ms.,Anne,,Clugstone,,,1234567890,9876543210,anneC@mail.com,PO Box 345,,New York,NY,12345,US,Voice,Percussion,,,,ESI,,,,Staff,Faculty,,,,,,6,1,22,y,y
+31,Mr.,Scott,,Bryant,,,1234567890,9876543210,scott@mail.com,PO Box 345,,New York,NY,12345,US,Recorder/Flute,Voice,,,,General,,,,Faculty,,,,,,,12,5,13,y,y
+32,,Kit,,Horn,,,1234567890,9876543210,kit@mail.com,PO Box 345,,New York,NY,12345,US,Historical Dance,Voice,,,,NLA,,,,Faculty,,,,,,,5,5,13,y,y
+33,,Joan,,Clarke,,,1234567890,9876543210,joan@mail.com,PO Box 345,,Houston,TX,12345,US,Bowed Strings,Voice,Percussion,,,Opera,General,,,Student,,,,,,,1,5,13,y,y
+34,Mrs.,Jill,,Lee,,,1234567890,9876543210,jill@mail.com,PO Box 345,,Concord,MA,12345,US,Recorder/Flute,,,,,General,,,,Student,,,,,,,1,5,13,y,y
+35,Mrs.,Janice,,Horn,,,1234567890,9876543210,janice@mail.com,PO Box 345,,Concord,MA,12345,US,Recorder/Flute,Reeds/Brass,,,,General,,,,Student,Staff,,,,,,3,1,14,y,y
+36,Mrs.,Cathy,,Jansen,,,1234567890,9876543210,cathy@mail.com,PO Box 345,,Concord,MA,12345,US,Recorder/Flute,,,,,General,,,,Student,,,,,,,1,7,14,y,y
+37,,Jean,,Burkhardt,,,1234567890,9876543210,jean@mail.com,123 Ave A,,Concord,MA,12345,US,Recorder/Flute,Percussion,,,,Opera,,,,Student,,,,,,,3,7,14,y,y
+38,,Helen,,Vilter,,,1234567890,9876543210,helen@mail.com,123 Ave A,,Concord,MA,12345,US,Voice,Recorder/Flute,,,,Opera,,,,Student,Workstudy,,,,,,2,1,21,y,y
+39,Mrs.,Jane,,McConnell,,,1234567890,9876543210,jane@mail.com,123 Ave A,,Concord,MA,12345,US,Reeds/Brass,Voice,,,,General,,,,Student,Workstudy,,,,,,4,1,22,y,y
+40,,Dan,Wulfric,Bottomer,,,1234567890,9876543210,dan@mail.com,123 Ave A,,Austin,TX,12345,US,Recorder/Flute,,,,,General,,,,Faculty,,,,,,,6,7,14,y,y
+41,Mr.,Scooter,,Ferguson,,,1234567890,9876543210,scooter@mail.com,123 Ave A,Apt 3,New York,NY,12345,US,Bowed Strings,,,,,General,,,,Faculty,,,,,,,5,7,14,y,y
+42,,Mary,,Jorgenson,,,1234567890,9876543210,mary@mail.com,123 Ave A,Apt 3,New York,NY,12345,US,Reeds/Brass,,,,,General,,,,Student,,,,,,,9,14,21,y,y
+43,,Lindsay,,Andersen,,,1234567890,9876543210,linsdayA@mail.com,123 Ave A,,Dallas,TX,12345,US,Recorder/Flute,Keyboards,,,,General,,,,Staff,,,,,,,7,14,21,y,y
+44,Ms.,Phyllis,,Coolen,,,1234567890,9876543210,phyllis@mail.com,123 Ave A,,New London,CT,12345,US,Recorder/Flute,,,,,barAcc,,,,Faculty,,,,,,,8,14,21,y,y
+45,,Katrien,,Goble,,,1234567890,9876543210,katrien@mail.com,PO Box 345,,Concord,MA,12345,US,Recorder/Flute,,,,,barAcc,,,,Student,,,,,,,1,14,21,y,y
+46,Mrs.,Karen,,Schmeidler,,,1234567890,9876543210,karen@mail.com,PO Box 345,,Concord,MA,12345,US,Recorder/Flute,Percussion,BowedStrings,,,Opera,,,,Faculty,,,,,,,11,14,21,y,y
+47,,Wendy,Lola,Wexler,,,1234567890,9876543210,wendy@mail.com,PO Box 345,,Concord,MA,12345,US,n/a,,,,,n/a,,,,Guest,,,,,,Dick Sheidler,12,7,21,y,y
+48,Mr.,Richard,,Hurwitz,,,1234567890,9876543210,richard@mail.com,123 Ave A,,Concord,MA,12345,US,Recorder/Flute,Voice,Percussion,,,Opera,,,,Student,,,,,,,32,7,21,y,y
+49,Mr.,Danny,,Korisheli,III,Daniel,1234567890,9876543210,danny@mail.com,123 Ave A,,Concord,MA,12345,US,Voice,,,,,ESI,General,,,Faculty,Vendor,,,,Fancy Facsimiles,,38,13,15,y,n
+50,Mr.,Tim,Brian,Johnson,,,1234567890,9876543210,tim@mail.com,123 Ave A,Apt 3,Concord,MA,12345,US,Voice,Recorder/Flute,,,,ESI,,,,Student,Workstudy,,,,,,28,7,21,y,y

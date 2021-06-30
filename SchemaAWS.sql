@@ -81,7 +81,7 @@ LOAD DATA INFILE './database/people.csv'
 INTO TABLE people
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
-TERMINATED BY '\n\'
+TERMINATED BY '\n'
 IGNORE 1 ROWS
 (userId, prefix, firstName, middleName, lastName, suffix, nickName, phoneCell, phoneHome, email, addressLine1, addressLine2, addressCity, addressState, addressZip, addressCountry, areaOfStudy1, areaOfStudy2, areaOfStudy3, areaOfStudy4, areaOfStudy5, program1, program2, program3, program4, role1, role2, role3, role4, role5, vendorCo, guestOf, yearsAttended, arrivalDate, departureDate, housingRequested, mealCardRequested);
 
@@ -89,7 +89,7 @@ LOAD DATA INFILE './database/rooms.csv'
 INTO TABLE rooms
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
-TERMINATED BY '\n\'
+TERMINATED BY '\n'
 IGNORE 1 ROWS
 (dorm, roomNo, single, mar21UserId);
 
@@ -97,7 +97,7 @@ LOAD DATA INFILE './database/roomReq.csv'
 INTO TABLE roomReqs
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
-TERMINATED BY '\n\'
+TERMINATED BY '\n'
 IGNORE 1 ROWS
 (userId, approxAge, rrPref, emergencyName, emergencyPhone, checkIn, checkOut, arrTime, roomType, roommateUserId);
 
